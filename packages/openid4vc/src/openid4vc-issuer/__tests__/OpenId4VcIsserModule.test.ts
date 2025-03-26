@@ -32,9 +32,10 @@ describe('OpenId4VcIssuerModule', () => {
 
     expect(dependencyManager.registerInstance).toHaveBeenCalledTimes(1)
     expect(dependencyManager.registerInstance).toHaveBeenCalledWith(
-      OpenId4VcIssuerModuleConfig,
+      expect.any(Symbol),
       new OpenId4VcIssuerModuleConfig(options)
     )
+    expect(dependencyManager.registerInstance.mock.calls[0][0].toString()).toEqual('Symbol(OpenId4VcIssuerModuleConfig)')
 
     expect(dependencyManager.registerSingleton).toHaveBeenCalledTimes(3)
     expect(dependencyManager.registerSingleton).toHaveBeenCalledWith(OpenId4VcIssuerService)
