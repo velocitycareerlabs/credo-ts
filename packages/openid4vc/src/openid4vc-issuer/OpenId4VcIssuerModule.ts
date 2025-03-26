@@ -3,10 +3,17 @@ import { AgentConfig, type AgentContext, type DependencyManager, InjectionSymbol
 import createHttpError from 'http-errors'
 import {
   OpenId4VcIssuerApi,
+} from './OpenId4VcIssuerApi'
+import {
   OpenId4VcIssuerModuleConfig,
   type OpenId4VcIssuerModuleConfigOptions,
+} from './OpenId4VcIssuerModuleConfig'
+import {
   OpenId4VcIssuerService,
-} from '.'
+} from './OpenId4VcIssuerService'
+
+
+
 import { type RouterFactory, type SupportedRouterTypes, getAgentContextForActorId } from '../shared/router'
 import { OpenId4VcIssuanceSessionRepository, OpenId4VcIssuerRepository } from './repository'
 
